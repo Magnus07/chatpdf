@@ -1,3 +1,4 @@
+import FileUplooad from "@/components/FileUplooad";
 import { Button } from "@/components/ui/button";
 import { UserButton, UserProfile, auth } from "@clerk/nextjs";
 import { LogIn } from "lucide-react";
@@ -16,14 +17,17 @@ export default function Home() {
           quidem? Ut?
         </h2>
         {userId ? (
-          <div className="flex flex-row justify-center space-x-5 items-center">
-            <UserButton afterSignOutUrl="/" />
+          <div className="flex flex-col space-y-5">
+            <div className="flex flex-row justify-center space-x-5 items-center">
+              <UserButton afterSignOutUrl="/" />
 
-            <Link href="/chats">
-              <Button>
-                Go to chats <LogIn className="ml-2" />
-              </Button>
-            </Link>
+              <Link href="/chats">
+                <Button>
+                  Go to chats <LogIn className="ml-2" />
+                </Button>
+              </Link>
+            </div>
+            <FileUplooad />
           </div>
         ) : (
           <Link href="/sign-in">
