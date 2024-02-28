@@ -1,4 +1,4 @@
-import FileUplooad from "@/components/FileUplooad";
+import FileUpload from "@/components/FileUpload";
 import { Button } from "@/components/ui/button";
 import { UserButton, UserProfile, auth } from "@clerk/nextjs";
 import { LogIn } from "lucide-react";
@@ -27,7 +27,7 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-            <FileUplooad />
+            <FileUpload />
           </div>
         ) : (
           <Link href="/sign-in">
