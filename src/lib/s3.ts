@@ -39,11 +39,11 @@ export async function uploadToS3(file: File) {
     });
 
     return Promise.resolve({
-      fileKey: file_key,
-      fileName: file.name,
+      file_key,
+      file_name: file.name,
     });
   } catch (error) {}
 }
 
 export const getS3Url = (file_key: string) =>
-  `https://${process.env.NEXT_PUBLIC_AWS_S3_BUCKET}.s3.ap-eu-north-1.amazonaws.com/${file_key}`;
+  `https://${process.env.NEXT_PUBLIC_AWS_S3_BUCKET}.s3.eu-north-1.amazonaws.com/${file_key}`;
